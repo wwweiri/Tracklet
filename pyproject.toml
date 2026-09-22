@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tracklet"
+version = "0.1.0"
+description = "Lightweight local ML experiment tracker"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Weiri", email = "weiri.code@gmail.com"}
+]
+keywords = ["machine-learning", "experiment-tracking", "cli", "sqlite"]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "typer>=0.12",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+demo = ["scikit-learn", "pandas"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+tracklet = "tracklet.cli:app"
+
+
+[project.urls]
+Homepage = "https://github.com/wwweiri/tracklet"
+Repository = "https://github.com/wwweiri/tracklet"
